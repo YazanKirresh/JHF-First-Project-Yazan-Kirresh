@@ -4,17 +4,22 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  function validateFields(input) {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (input.value.match(validRegex)) {
-      alert("Valid email address!");
-      document.form1.text1.focus();
-    } else {
-      alert("Invalid email address!");
-      document.form1.text1.focus();
+
+  function validateAllFields (){
+    if(document.getElementById("fname").value && document.getElementById("lname").value && document.getElementById("phoneNumber").value){
+      // Values were entered
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (document.getElementById("myEmail").value.match(validRegex)) {
+        // Correct email was entered
+      }else {
+        alert("An invalid email address was entered!");
+      }
+      alert("Submitted the Form");
+      }else{
+        alert("Empty Field was detected");
     }
   }
+
 
   return (
     <>
@@ -23,8 +28,8 @@ function App() {
           <table>
             <tr>
               <td><label for="fname">First name:</label></td>
-              <td><input type="text" id="fname" name="fname"/><br/><br/></td>
-              <td><label for="fname">Last name:</label></td>
+              <td><input type="text"  id="fname" name="fname"/><br/><br/></td>
+              <td><label for="lname">Last name:</label></td>
               <td><input type="text" id="lname" name="lname"/><br/><br/></td>
             </tr>
             <tr>
@@ -34,11 +39,11 @@ function App() {
               <td><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+972-123-45-678"/><br/><br/></td>
             </tr>
             <tr>
-              <td><label for="fname">Country:</label></td>
-              <tr>
-                    <td><label for="fname">Country:</label></td>
-                    <td>        
-                    <select id="country" name="country" class="form-control">
+              <td>
+                <label for="fname">Country:</label>
+              </td>
+              <td>        
+                <select id="country" name="country" class="form-control">
                         <option value="Afghanistan">Unkown</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
@@ -284,15 +289,21 @@ function App() {
                         <option value="Yemen">Yemen</option>
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
-                    </select></td>
-                    </tr>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <label for="fname">Description:</label>
+              </td>
+              <td>
                 <input type="text" id="lname" name="lname"/><br/><br/>
+              </td>
             </tr>
           </table>
           <textarea id="description" name="description" rows="4" cols="50">How can I assist?</textarea>
             <div>
-                <button onClick={validateFields} value="Submit"/>
+                <button onClick ={validateAllFields}>Submit</button>
             </div>
         </form>
       </div>
