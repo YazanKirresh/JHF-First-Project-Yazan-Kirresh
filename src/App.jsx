@@ -5,6 +5,28 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  function ValidateEmail(input) {
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (input.value.match(validRegex)) {
+  
+      alert("Valid email address!");
+  
+      document.form1.text1.focus();
+  
+      return true;
+  
+    } else {
+  
+      alert("Invalid email address!");
+  
+      document.form1.text1.focus();
+  
+      return false;
+  
+    }
+  
+  }
   return (
     <>
       <div>
@@ -12,15 +34,15 @@ function App() {
           <table>
             <tr>
               <td><label for="fname">First name:</label></td>
-              <td><input type="text" id="fname" name="fname" required/><br/><br/></td>
+              <td><input type="text" id="fname" name="fname"/><br/><br/></td>
               <td><label for="fname">Last name:</label></td>
-              <td><input type="text" id="lname" name="lname" required/><br/><br/></td>
+              <td><input type="text" id="lname" name="lname"/><br/><br/></td>
             </tr>
             <tr>
               <td><label for="myEmail">Email:</label></td>
-              <td><input type="text" id="myEmail" placeholder="example@gmail.com" required/><br/><br/></td>
+              <td><input type="text" id="myEmail" placeholder="example@gmail.com"/><br/><br/></td>
               <td><label for="phoneNumber">Phone Number:</label></td>
-              <td><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+972-123-45-678" required/><br/><br/></td>
+              <td><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+972-123-45-678"/><br/><br/></td>
             </tr>
             <tr>
               <td><label for="fname">Country:</label></td>
