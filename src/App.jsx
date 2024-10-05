@@ -5,23 +5,6 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const randomFacts = [
-    "Fact 1",
-    "Fact 2",
-    "Fact 3",
-    "Fact 4",
-];
-constructor(props) {
-  super(props);
-  this.showRandomFact = this.showRandomFact.bind(this);
-}
-
-function showRandomFact() {
-    const randomIndex = Math.floor(Math.random() * randomFacts.length);
-    alert(randomFacts[randomIndex]);
-
-}
-
   return (
     <>
       <div>
@@ -35,7 +18,7 @@ function showRandomFact() {
             </tr>
             <tr>
               <td><label for="myEmail">Email:</label></td>
-              <td><input type="email" id="myEmail" placeholder="example@gmail.com" required/><br/><br/></td>
+              <td><input type="text" id="myEmail" placeholder="example@gmail.com" required/><br/><br/></td>
               <td><label for="phoneNumber">Phone Number:</label></td>
               <td><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+972-123-45-678" required/><br/><br/></td>
             </tr>
@@ -300,9 +283,6 @@ function showRandomFact() {
             <div>
                 <input type="submit" value="Submit"/>
             </div>
-        </form>
-        <form>
-            <button onclick="showRandomFact" type="submit" value="random_fact">Random fact about me</button>
         </form>
       </div>
     </>
