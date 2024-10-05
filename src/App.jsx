@@ -6,7 +6,8 @@ import './App.css'
 function App() {
 
   function validateAllFields (){
-    if(document.getElementById("fname").value && document.getElementById("lname").value && document.getElementById("phoneNumber").value){
+    const isWhitespaceString = str => !/\S/.test(str)
+    if(document.getElementById("fname").value &&  isWhitespaceString(document.getElementById("fname").value) && document.getElementById("lname").value && document.getElementById("phoneNumber").value){
       // Values were entered
       var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       if (document.getElementById("myEmail").value.match(validRegex)) {
