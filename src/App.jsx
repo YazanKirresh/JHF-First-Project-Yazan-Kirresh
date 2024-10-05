@@ -15,7 +15,6 @@ function App() {
       }else {
         alert("An invalid email address was entered!");
       }
-      alert("Submitted the Form");
       }else{
         alert("Empty Field was detected");
     }
