@@ -298,7 +298,7 @@ function App() {
                     </select></td>
                     </tr>
                 <label for="fname">Description:</label>
-                <input type="text" id="lname" name="lname" required/><br/><br/>
+                <input type="text" id="lname" name="lname"/><br/><br/>
             </tr>
           </table>
           <textarea id="description" name="description" rows="4" cols="50">How can I assist?</textarea>
