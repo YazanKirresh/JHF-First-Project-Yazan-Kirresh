@@ -5,8 +5,7 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  function ValidateEmail(input) {
-
+  function validateFields(input) {
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (input.value.match(validRegex)) {
       alert("Valid email address!");
@@ -15,8 +14,8 @@ function App() {
       alert("Invalid email address!");
       document.form1.text1.focus();
     }
-  
   }
+
   return (
     <>
       <div>
@@ -293,7 +292,7 @@ function App() {
           </table>
           <textarea id="description" name="description" rows="4" cols="50">How can I assist?</textarea>
             <div>
-                <input type="submit" value="Submit"/>
+                <button onClick={validateFields} value="Submit"/>
             </div>
         </form>
       </div>
