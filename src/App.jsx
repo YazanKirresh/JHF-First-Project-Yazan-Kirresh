@@ -6,8 +6,12 @@ import './App.css'
 function App() {
 
   function validateAllFields (){
-    const isWhitespaceString = str => !/\S/.test(str)
-    if(document.getElementById("fname").value && document.getElementById("lname").value && document.getElementById("phoneNumber").value){
+    let fname = document.getElementById("fname").value
+    let lname = document.getElementById("lname").value
+    let phoneNumber = document.getElementById("phoneNumber").value
+    if(document.getElementById("fname").value && fname.trim().length > 0 
+    && document.getElementById("lname").value && lname.trim().length > 0
+    && document.getElementById("phoneNumber").value && phoneNumber.trim().length > 0){
       // Values were entered
       var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       if (document.getElementById("myEmail").value.match(validRegex)) {
